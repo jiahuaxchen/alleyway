@@ -7,6 +7,7 @@ Developed through a critical data studies lens, it moves beyond GIS mapping to m
 ---
 ## Navigation & Instrument Controls
 
+* **Observe the lighting in the alley way:** Hit the **Play** button to start seeing how the sun light might or might not peek into the alley way.
 * **Traversing the Settlement:** Use your mouse (click-and-drag) for high-level orbital overviews, or use the **W, A, S, D / Arrow Keys** to drop to ground level and physically walk through the alleyways.
 * **Cinematic Perspective Matrices:** The dashboard features rapid-jump viewport anchors (**Textile Workshop, Gathering Spot, Skyline Looking Up, God's View**) designed to glide the camera between localized ground-level focus areas and macro structural overviews.
 * **The Collapsible Dashboard:** Use the **Hide Dashboard** toggle in the top-right corner to smoothly slide the UI out of the viewport.
