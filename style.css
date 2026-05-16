@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow: hidden; /* Prevents scrolling */
+    background-color: #111;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+#ui-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: monospace;
+    margin-top: 10px;
+}
+
+button:hover { background: #777; }
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace; /* Clinical, data-audit texture */
+    background-color: #1a1a1a;
+}
+
+/* The Start Button */
+#start-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    background: rgba(10, 10, 10, 0.85);
+    color: #eee;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+#start-btn:hover { background: #fff; color: #000; }
+
+/* The Unified Dashboard Container */
+#controls {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /* Brings Time and Camera together side-by-side */
+    gap: 30px;
+    background: rgba(15, 15, 15, 0.7); /* Translucent dark background */
+    backdrop-filter: blur(12px); /* The 'Frosted Glass' texture */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+/* The Time Pane (Left Side) */
+#time-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+    width: 250px;
+}
+
+#time-display {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Customizing the native slider */
+#time-slider {
+    width: 100%;
+    margin-bottom: 15px;
+    accent-color: #ffaa00; /* Subtle warm glow linking to the Care network color */
+    cursor: pointer;
+}
+
+/* The Camera Pane (Right Side) */
+#camera-pane {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 Button Grid */
+    gap: 12px;
+    align-items: center;
+}
+
+/* Unified Button Styling (Used for Play button and Camera buttons) */
+.ui-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+}
+.ui-btn:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- UPDATE: Move button to the top right corner --- */
+#toggle-ui-btn {
+    position: absolute;
+    top: 20px; /* <--- Changed from bottom to top */
+    right: 20px;
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    z-index: 1000; 
+}
+
+#toggle-ui-btn:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- UPDATE: Add smooth transition to the existing #controls --- */
+#controls {
+    /* Keep all your existing #controls CSS, just ADD this line: */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+}
+
+/* --- NEW: The Hidden State Class --- */
+#controls.collapsed {
+    /* Slides the dashboard down 150% of its own height and fades it out */
+    transform: translate(-50%, 150%);
+    opacity: 0;
+    pointer-events: none; /* Stops it from blocking clicks while hidden */
+}
+#clock-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    cursor: crosshair;
+}
+
+#clock-face {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#clock-hand {
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    background: #ffaa00; /* Links to the Care network color */
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+    transform: rotate(90deg); /* Initial position */
+}
+
+/* Markers for the dial */
+.marker {
+    position: absolute;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    text-align: center;
+}
+.m0 { top: 5px; }
+.m6 { right: 5px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+.m12 { bottom: 5px; }
+.m18 { left: 5px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
