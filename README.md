@@ -1,8 +1,8 @@
 # An Alley Way: A Critical Spatial Visualization of the Urban Village in Guangzhou
 
-Welcome to **The Alley**—an interactive, data-driven 3D web environment simulating an urban village (*chengzhongcun*). 
+Welcome to **An Alley Way**—an interactive 3D web environment simulating alley ways in an urban village b(*chengzhongcun*), Shangchong, in Guangzhou . 
 
-This platform serves as both a critical visualization tool and an empirical spatial interface. Developed through a critical data studies lens, it moves beyond GIS mapping to model the informal settlement as a complex and living place. By rendering the micro-geographies of light and sound rhythm, **The Alley** makes visible the urban patterns that standard spatial datasets frequently omit or misrepresent.
+Developed through a critical data studies lens, it moves beyond GIS mapping to model the informal settlement as a complex and living place. By rendering the micro-geographies of light and sound rhythm, The project makes visible the urban patterns that standard spatial datasets frequently omit or misrepresent.
 
 ---
 ## Navigation & Instrument Controls
@@ -15,7 +15,7 @@ This platform serves as both a critical visualization tool and an empirical spat
 
 The visualization foregrounds the dense, complex spatial layout of the urban village, using an architectural blueprint aesthetic to focus attention on physical configurations and structural relationships.
 
-* **The Overhang Grid:** The gray, monolithic concrete volumes represent the characteristic high-density morphology of vernacular enclaves. Notice how upper stories project aggressively outward over the ground level—a structural logic that maximizes interior residential/production space while compressing the public street layer below.
+* **The Overhang Grid:** Guangzhou's climate demands a built form that can handle sudden, torrential monsoon downpours and oppressive summer heat. By projecting the upper stories aggressively outward over the ground level, the architecture maximizes interior square footage while creating a continuous, sheltered pedestrian walkway below. 
 * **Corridor Dynamics:** By configuring narrower building footprints and short base depths, the environment simulates the intense physical enclosure of narrow alleyway networks, highlighting the spatial negotiations inherent to informal urbanization.
 
 ## Temporal Light Rhythms: Production vs. Reproductive Labor
